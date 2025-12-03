@@ -1,7 +1,14 @@
 /* Header elegante */
+
+body {
+    overflow-x: hidden;
+}
+
+
+/* Header elegante compacto */
 .site-header {
     width: 100%;
-    padding: 20px 40px;
+    padding: 8px 20px; /* menos padding para que sea más delgado */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,12 +22,12 @@
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px; /* menos separación entre logo y título */
 }
 
 .logo {
-    width: 50px;
-    height: 50px;
+    width: 40px;  /* más pequeño */
+    height: 40px; /* más pequeño */
     object-fit: contain;
     transition: transform 0.3s ease;
 }
@@ -30,38 +37,44 @@
 }
 
 .site-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem; /* tamaño más compacto */
     font-weight: 600;
     color: #001D4A;
     letter-spacing: 1px;
+    line-height: 1.2; /* reduce espacio vertical */
 }
 
-/* Navbar minimalista */
+
+
+
+
+/* Navbar minimalista mejorado */
 .nav {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 20px; /* más espacio entre links para elegancia */
 }
 
 .nav a {
     position: relative;
     text-decoration: none;
-    color: #555;
-    font-weight: 500;
-    font-size: 0.95rem;
-    padding: 5px 0;
-    transition: color 0.3s ease;
+    color: #333; /* más contraste */
+    font-weight: 600;
+    font-size: 1rem; /* un poco más grande */
+    padding: 4px 0; 
+    transition: color 0.4s ease, transform 0.3s ease;
 }
 
 .nav a::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -4px; /* baja un poco el subrayado */
     left: 50%;
     width: 0%;
-    height: 2px;
-    background-color: #64B5F6;
-    transition: width 0.3s ease, left 0.3s ease;
+    height: 3px; /* subrayado más grueso */
+    background: linear-gradient(90deg, #64B5F6, #90CAF9); /* degradado azul elegante */
+    border-radius: 2px;
+    transition: width 0.4s ease, left 0.4s ease;
 }
 
 .nav a:hover::after {
@@ -70,43 +83,49 @@
 }
 
 .nav a:hover {
-    color: #64B5F6;
+    color: #001D4A; /* color más vivo */
+    transform: translateY(-2px); /* efecto levitación */
 }
 
+/* Selector de idioma elegante y moderno */
 #lang-select {
-    margin-left: 6px;
-    padding: 8px 14px;
+    margin-left: 10px;
+    padding: 8px 16px; /* más grande y elegante */
     border: 1px solid #d0e6fa;
-    border-radius: 999px; /* forma redondeada elegante */
-    background: linear-gradient(135deg, #ffffff, #f4faff);
+    border-radius: 999px; /* forma redondeada */
+    background: linear-gradient(135deg, #ffffff, #e6f0ff);
     color: #001D4A;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.95rem; /* un poco más grande */
     cursor: pointer;
-    appearance: none; /* quita la flecha fea del navegador */
-    transition: all 0.3s ease;
-
+    appearance: none;
+    transition: all 0.35s ease;
+    position: relative;
+    
     /* Icono personalizado */
-    background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
     background-repeat: no-repeat;
-    background-position: right 14px center;
-    padding-right: 36px; /* deja espacio para el icono */
+    background-position: right 12px center;
+    padding-right: 36px;
 }
 
 #lang-select:hover {
-    box-shadow: 0 4px 14px rgba(100, 181, 246, 0.25);
+    box-shadow: 0 6px 20px rgba(100, 181, 246, 0.35);
     border-color: #64B5F6;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #f0f8ff, #d0e6fa);
 }
 
 #lang-select:focus {
     outline: none;
     border-color: #64B5F6;
-    box-shadow: 0 0 10px rgba(100, 181, 246, 0.4);
+    box-shadow: 0 0 12px rgba(100, 181, 246, 0.5);
 }
 
-
-
+/* Efecto adicional de movimiento al abrir */
+#lang-select:active {
+    transform: translateY(1px) scale(0.98);
+}
 
 
 
@@ -308,13 +327,14 @@ main p {
     position: relative;
     flex: 1 1 calc(33% - 20px);
     max-width: 400px;
-    height: 250px;
+    height: 350px; /* más alto */
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
+
 
 .gallery-video {
     width: 100%;
@@ -486,113 +506,104 @@ main p {
     background-image: url("/img/debiti.jpg");
 }
 
-/* Efecto hover */
-.music-card:hover {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+/* Efecto hover más elegante y vivo */
+.music-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    overflow: hidden;
+    border-radius: 20px; /* más redondeado */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-/* Overlay oscuro */
+.music-card:hover {
+    transform: translateY(-10px) scale(1.07);
+    box-shadow: 0 20px 40px rgba(0, 29, 74, 0.25); /* sombra más intensa y elegante */
+}
+
+/* Overlay elegante con gradiente suave y animación */
 .music-overlay {
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent 60%);
-    
+    background: linear-gradient(to top, rgba(0,29,74,0.75), rgba(0,29,74,0.2) 60%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-
     padding-bottom: 20px;
     color: #fff;
+    transition: background 0.4s ease;
 }
 
-/* Botón Play/Pause */
+.music-card:hover .music-overlay {
+    background: linear-gradient(to top, rgba(0,29,74,0.85), rgba(0,29,74,0.1) 60%);
+}
+
+/* Botón Play/Pause con efecto brillante */
 .play-btn {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.25);
     cursor: pointer;
-    font-size: 1.2rem;
-    color: white;
-    margin-bottom: 10px;
-    transition: transform .25s ease, background .25s ease;
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(100, 181, 246, 0.3);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .play-btn:hover {
-    transform: scale(1.15);
-    background: rgba(255,255,255,0.25);
+    transform: scale(1.2) rotate(-5deg);
+    background: rgba(255,255,255,0.35);
+    box-shadow: 0 8px 20px rgba(100, 181, 246, 0.5);
 }
 
+/* Texto del título más elegante */
 .music-overlay h3 {
     margin: 0;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-}
-
-
-.invite-section {
-    background: #001D4A;
-    padding: 60px 20px;
-    text-align: center;
-    color: white;
-}
-
-.invite-section h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-.invite-section p {
-    max-width: 650px;
-    margin: 0 auto 30px;
-    opacity: 0.85;
-}
-
-.invite-form {
-    max-width: 450px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.invite-form input,
-.invite-form select {
-    padding: 12px 15px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    outline: none;
-}
-
-.invite-btn {
-    padding: 12px 0;
-    background-color: #64B5F6;
-    color: white;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
     font-weight: 600;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s ease;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
 }
 
-.invite-btn:hover {
-    background-color: #90CAF9;
-    transform: translateY(-2px);
+.music-card:hover .music-overlay h3 {
+    transform: translateY(-5px);
 }
 
-.invite-note {
-    margin-top: 20px;
-    font-size: 0.9rem;
-    opacity: 0.7;
+/* Opcional: efecto de brillo al pasar sobre la card */
+.music-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.15) 0%, transparent 70%);
+    transform: rotate(25deg) scale(0);
+    transition: transform 0.6s ease;
 }
+
+.music-card:hover::before {
+    transform: rotate(25deg) scale(1);
+}
+
+
+
+
+ 
+
+
+
+
+
 
 
 
@@ -708,3 +719,25 @@ main p {
 }
 
 
+
+/* Reset básico para toda la página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* evita scroll horizontal */
+    font-family: 'Poppins', sans-serif;
+    background: #fefcf6;
+}
+
+/* Contenedor principal que centra y limita ancho */
+.container {
+    max-width: 1400px; /* ancho máximo de toda la página */
+    margin: 0 auto;    /* centra horizontalmente */
+    padding: 0 30px;   /* espacio interno a los lados */
+}
