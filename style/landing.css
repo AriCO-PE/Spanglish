@@ -1,743 +1,392 @@
-/* Header elegante */
+/* -------------------------
+   Estilos Globales
+-------------------------- */
 
-body {
-    overflow-x: hidden;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
+body {
+    background: #f6f6f6;
+    color: #222;
+    line-height: 1.6;
+}
 
-/* Header elegante compacto */
-.site-header {
+.container {
     width: 100%;
-    padding: 8px 20px; /* menos padding para que sea más delgado */
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* -------------------------
+   HEADER
+-------------------------- */
+
+/* =====================
+   HEADER PRINCIPAL
+===================== */
+.site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffffff; /* blanco del header */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 18px 40px; /* espacio generoso */
     position: sticky;
     top: 0;
-    z-index: 100;
+    background: rgba(255, 255, 255, 0.95); /* fondo semitransparente */
+    backdrop-filter: blur(10px); /* efecto cristal elegante */
+    z-index: 1000;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    font-family: 'Inter', sans-serif;
 }
 
+/* Logo + título */
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 10px; /* menos separación entre logo y título */
+    gap: 12px;
 }
 
 .logo {
-    width: 40px;  /* más pequeño */
-    height: 40px; /* más pequeño */
-    object-fit: contain;
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08); /* sombra ligera */
     transition: transform 0.3s ease;
 }
 
 .logo:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .site-title {
-    font-size: 1.3rem; /* tamaño más compacto */
-    font-weight: 600;
+    font-size: 22px;
+    font-weight: 700;
     color: #001D4A;
     letter-spacing: 1px;
-    line-height: 1.2; /* reduce espacio vertical */
 }
 
-
-
-
-
-/* Navbar minimalista mejorado */
+/* Navegación */
 .nav {
     display: flex;
     align-items: center;
-    gap: 20px; /* más espacio entre links para elegancia */
+    gap: 20px;
 }
 
 .nav a {
-    position: relative;
+    font-size: 15px;
+    font-weight: 500;
     text-decoration: none;
-    color: #333; /* más contraste */
-    font-weight: 600;
-    font-size: 1rem; /* un poco más grande */
-    padding: 4px 0; 
-    transition: color 0.4s ease, transform 0.3s ease;
-}
-
-.nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px; /* baja un poco el subrayado */
-    left: 50%;
-    width: 0%;
-    height: 3px; /* subrayado más grueso */
-    background: linear-gradient(90deg, #64B5F6, #90CAF9); /* degradado azul elegante */
-    border-radius: 2px;
-    transition: width 0.4s ease, left 0.4s ease;
-}
-
-.nav a:hover::after {
-    width: 100%;
-    left: 0;
+    color: #333;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 .nav a:hover {
-    color: #001D4A; /* color más vivo */
-    transform: translateY(-2px); /* efecto levitación */
+    color: #ffffff;
+    background-color: #001D4A;
+    box-shadow: 0 4px 12px rgba(0, 29, 74, 0.15);
 }
 
-/* Selector de idioma elegante y moderno */
+/* Selector de idioma elegante */
 #lang-select {
-    margin-left: 10px;
-    padding: 8px 16px; /* más grande y elegante */
-    border: 1px solid #d0e6fa;
-    border-radius: 999px; /* forma redondeada */
-    background: linear-gradient(135deg, #ffffff, #e6f0ff);
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid #001D4A;
+    background: linear-gradient(145deg, #ffffff, #f0f2f5);
     color: #001D4A;
     font-weight: 600;
-    font-size: 0.95rem; /* un poco más grande */
+    font-size: 14px;
     cursor: pointer;
-    appearance: none;
-    transition: all 0.35s ease;
-    position: relative;
-    
-    /* Icono personalizado */
-    background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    padding-right: 36px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 29, 74, 0.08);
 }
 
 #lang-select:hover {
-    box-shadow: 0 6px 20px rgba(100, 181, 246, 0.35);
-    border-color: #64B5F6;
-    transform: translateY(-3px);
-    background: linear-gradient(135deg, #f0f8ff, #d0e6fa);
+    background: #001D4A;
+    color: #ffffff;
+    border-color: #001D4A;
+    box-shadow: 0 6px 16px rgba(0, 29, 74, 0.15);
+    transform: translateY(-2px);
 }
 
 #lang-select:focus {
     outline: none;
-    border-color: #64B5F6;
-    box-shadow: 0 0 12px rgba(100, 181, 246, 0.5);
+    box-shadow: 0 0 0 4px rgba(0, 29, 74, 0.25);
 }
 
-/* Efecto adicional de movimiento al abrir */
-#lang-select:active {
-    transform: translateY(1px) scale(0.98);
+/* Responsive: header en pantallas pequeñas */
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 
-
-
-
-/* Main */
-main {
-    padding: 60px 20px;
-    text-align: center;
-}
+/* -------------------------
+   TITULOS CENTRALES
+-------------------------- */
 
 main h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 38px;
     color: #001D4A;
 }
 
 main p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto;
-    color: #555;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 25px;
+    opacity: 0.7;
 }
 
-/* Responsive */
-@media (max-width: 480px) {
-    .site-header {
-        flex-direction: column;
-        gap: 10px;
-        padding: 15px 20px;
-    }
+/* -------------------------
+   VIDEO PRINCIPAL
+-------------------------- */
 
-    .nav {
-        gap: 15px;
-    }
-
-    main h1 {
-        font-size: 2rem;
-    }
-
-    main p {
-        font-size: 1rem;
-    }
-}
-
-
-
-
-
-/* Contenedor del video */
 .video-container {
     display: flex;
     justify-content: center;
-    margin-top: 100px;
 }
 
-/* Card minimalista con video */
 .video-card {
-    position: relative;
-    width: 800px; /* más grande */
-    height: 500px; /* más alto */
-    border-radius: 12px;
+    width: 80%;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    cursor: pointer;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
-/* Hover: expande suavemente */
-.video-card:hover {
-    transform: scale(1.08); /* ligero zoom */
-    box-shadow: 0 20px 40px rgba(100, 181, 246, 0.25);
-}
-
-/* Video dentro de la card */
-.video-card .video {
+.video {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
+    border-radius: 20px;
 }
 
-/* Overlay minimalista */
-.video-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 29, 74, 0.6);
-    color: #fff;
-    padding: 15px;
-    text-align: center;
-    font-size: 1rem;
-    transition: background 0.3s ease;
-}
+/* -------------------------
+   CARDS
+-------------------------- */
 
-.video-card:hover .video-overlay {
-    background: rgba(0, 29, 74, 0.3);
-}
-
-
-
-
-
-
-/* Contenedor de la sección de cards */
 .cards-section {
-    opacity: 0;                 /* Empieza invisible */
-    transform: translateY(50px); /* Desplazada hacia abajo */
-    transition: transform 0.8s ease, opacity 0.8s ease;
+    margin-top: 40px;
 }
 
-/* Cuando entra en pantalla */
-.cards-section.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Contenedor de cards */
 .cards-container {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
-    margin-top: 40px;
 }
 
-/* Card minimalista */
 .card {
-    background-color: #ffffff;
-    border-radius: 12px;
-    padding: 25px 20px;
-    width: 250px;
-    min-height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 300px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 20px;
     text-align: center;
-    color: #001D4A;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
 }
 
 .card h2 {
-    margin-bottom: 10px;
-    font-size: 1.25rem;
-    font-weight: 600;
-}
-
-.card p {
-    font-size: 0.95rem;
-    color: #555;
-}
-
-/* Efecto hover elegante */
-.card:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 12px 24px rgba(100, 181, 246, 0.2);
-    background: #f0f4ff;
-}
-
-
-
-
-
-.gallery-videos-section {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #FFEED6; /* blanco hueso */
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.gallery-videos-section {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-.gallery-videos-section h2 {
-    font-size: 2rem;
     color: #001D4A;
-    margin-bottom: 40px;
-    font-weight: 600;
+    margin-bottom: 10px;
 }
+
+/* -------------------------
+   GALERIA DE VIDEOS
+-------------------------- */
 
 .gallery-videos-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    padding: 20px 0;
 }
 
 .gallery-video-card {
-    position: relative;
-    flex: 1 1 calc(33% - 20px);
-    max-width: 400px;
-    height: 350px; /* más alto */
+    border-radius: 18px;
     overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.12);
     cursor: pointer;
-}
-
-
-.gallery-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
+    transition: .3s;
 }
 
 .gallery-video-card:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 12px 24px rgba(100, 181, 246, 0.2);
+    transform: scale(1.03);
 }
 
-.gallery-video-card:hover .gallery-video {
-    transform: scale(1.05);
+.gallery-video {
+    width: 100%;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-    .gallery-video-card {
-        flex: 1 1 calc(50% - 20px);
-        height: 220px;
-    }
+.gallery-videos-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centra horizontalmente todo el contenido */
+    text-align: center; /* centra el texto */
+    padding: 60px 20px; /* espacio superior e inferior generoso */
+    background-color: #f8f9fa; /* fondo suave y uniforme */
 }
 
-@media (max-width: 600px) {
-    .gallery-video-card {
-        flex: 1 1 100%;
-        height: 180px;
-    }
+.gallery-videos-section h2 {
+    font-family: 'Inter', sans-serif; /* tipografía moderna */
+    font-size: 2rem; /* tamaño elegante para títulos */
+    font-weight: 600;
+    color: #001D4A; /* color sobrio y elegante */
+    margin-bottom: 30px; /* separación del contenido siguiente */
+    letter-spacing: 1px; /* toque sofisticado */
+}
+
+.gallery-videos-section .gallery-content {
+    display: flex;
+    flex-wrap: wrap; /* se adapta a pantallas pequeñas */
+    justify-content: center; /* centra las tarjetas o videos */
+    gap: 20px;
+    max-width: 1200px; /* limita ancho para mayor elegancia */
+    width: 100%;
 }
 
 
+/* -------------------------
+   MODALIDAD
+-------------------------- */
 
-
-.modalidad-section {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #fefcf6; /* blanco hueso */
-}
-
-.modalidad-section h2 {
-    font-size: 2rem;
-    color: #001D4A;
-    margin-bottom: 30px;
-}
-
-/* Contenedor de los 2 botones */
 .mode-container {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-bottom: 25px;
+    flex-wrap: wrap; /* para que se adapte a pantallas pequeñas */
+    padding: 20px;
+    background: #f8f9fa; /* fondo suave y neutro */
 }
 
-/* Cuadros */
 .mode-box {
     width: 220px;
     padding: 25px 20px;
+    background: #ffffff;
     border-radius: 12px;
-    border: 2px solid #001D4A;
+    text-align: center;
     cursor: pointer;
-    background: white;
-    color: #001D4A;
-    transition: 
-        background 0.35s ease,
-        color 0.35s ease,
-        transform 0.35s ease,
-        border-color 0.35s ease;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+    border: 1px solid #e0e0e0; /* borde más sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* sombra más suave */
+    font-family: 'Inter', sans-serif; /* tipografía limpia y moderna */
 }
 
 .mode-box:hover {
-    transform: translateY(-5px) scale(1.03);
+    border-color: #001D4A; /* acento elegante */
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* efecto sutil al elevar */
 }
 
-/* Estado activo */
-.mode-box.active {
-    background: #001D4A;
-    color: white;
-    border-color: #001D4A;
-    transform: translateY(-5px) scale(1.05);
-}
-
-/* Texto de descripción */
-.mode-description {
-    max-width: 600px;
-    margin: 0 auto;
-    font-size: 1.05rem;
-    color: #333;
-    line-height: 1.6;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.mode-description.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-    .mode-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .mode-box {
-        width: 100%;
-        max-width: 260px;
-        margin: 0 auto;
-    }
-}
-
-
-
-
-.sabores-section {
-    padding: 70px 20px;
+#mode-description {
+    margin-top: 20px;
     text-align: center;
-    background: #fefcf6;
+    font-size: 15px;
+    color: #555; /* color gris neutro más elegante */
+    line-height: 1.5;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Inter', sans-serif;
 }
 
-.sabores-section h2 {
-    font-size: 2rem;
-    color: #001D4A;
-    margin-bottom: 50px;
+
+.mode-box h3{
+    color: #032352;
+    margin-bottom: 10px;
 }
 
-.sabores-container {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-/* Tamaño general de las cards */
-.music-card {
-    width: 260px;
-    height: 180px;
-    border-radius: 18px;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    transition: transform .35s ease, box-shadow .35s ease;
-}
-
-/* Asignación de imágenes */
-.music-card[data-genre="salsa"] {
-    background-image: url("/img/lanoche.jpg");
-}
-
-.music-card[data-genre="bachata"] {
-    background-image: url("/img/imitadora.jpg");
-}
-
-.music-card[data-genre="reggaeton"] {
-    background-image: url("/img/gasolina.jpg");
-}
-
-.music-card[data-genre="urbana"] {
-    background-image: url("/img/debiti.jpg");
-}
-
-/* Efecto hover más elegante y vivo */
-.music-card {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    overflow: hidden;
-    border-radius: 20px; /* más redondeado */
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
-
-.music-card:hover {
-    transform: translateY(-10px) scale(1.07);
-    box-shadow: 0 20px 40px rgba(0, 29, 74, 0.25); /* sombra más intensa y elegante */
-}
-
-/* Overlay elegante con gradiente suave y animación */
-.music-overlay {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0,29,74,0.75), rgba(0,29,74,0.2) 60%);
+.modalidad-section {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    padding-bottom: 20px;
-    color: #fff;
-    transition: background 0.4s ease;
+    align-items: center; /* centra todo el contenido horizontalmente */
+    justify-content: center; /* centra verticalmente si hay altura suficiente */
+    text-align: center; /* centra el texto */
+    padding: 60px 20px; /* espacio superior e inferior generoso */
+    background-color: #f8f9fa; /* fondo suave y neutro */
 }
 
-.music-card:hover .music-overlay {
-    background: linear-gradient(to top, rgba(0,29,74,0.85), rgba(0,29,74,0.1) 60%);
-}
-
-/* Botón Play/Pause con efecto brillante */
-.play-btn {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.2);
-    backdrop-filter: blur(6px);
-    border: 1px solid rgba(255,255,255,0.25);
-    cursor: pointer;
-    font-size: 1.3rem;
-    color: #fff;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(100, 181, 246, 0.3);
-    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-}
-
-.play-btn:hover {
-    transform: scale(1.2) rotate(-5deg);
-    background: rgba(255,255,255,0.35);
-    box-shadow: 0 8px 20px rgba(100, 181, 246, 0.5);
-}
-
-/* Texto del título más elegante */
-.music-overlay h3 {
-    margin: 0;
-    font-size: 1.3rem;
-    letter-spacing: 1.5px;
+.modalidad-section h2 {
+    font-family: 'Inter', sans-serif; /* tipografía moderna */
+    font-size: 2rem; /* tamaño elegante para títulos */
     font-weight: 600;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease;
+    color: #001D4A; /* color elegante y sobrio */
+    margin-bottom: 30px; /* separación del contenido siguiente */
+    letter-spacing: 1px; /* toque sofisticado */
 }
 
-.music-card:hover .music-overlay h3 {
-    transform: translateY(-5px);
-}
-
-/* Opcional: efecto de brillo al pasar sobre la card */
-.music-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at center, rgba(255,255,255,0.15) 0%, transparent 70%);
-    transform: rotate(25deg) scale(0);
-    transition: transform 0.6s ease;
-}
-
-.music-card:hover::before {
-    transform: rotate(25deg) scale(1);
+.modalidad-section p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #555; /* gris neutro para subtítulos o descripción */
+    max-width: 600px;
+    line-height: 1.6;
 }
 
 
-
-
- 
-
-
-
-
-
-
-
-
-
+/* -------------------------
+   FOOTER
+-------------------------- */
 
 .footer-elegant {
-    background: linear-gradient(135deg, #001D4A, #0D3B66);
-    color: #f0f4ff;
-    padding: 60px 20px 30px;
-    font-family: 'Poppins', sans-serif;
+    margin-top: 60px;
+    padding: 50px 20px;
+    background: #001D4A;
+    color: white;
 }
 
 .footer-container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 40px;
-}
-
-/* Brand */
-.footer-brand h2 {
-    font-size: 2rem;
-    color: #64B5F6;
-    margin-bottom: 10px;
-}
-
-.footer-brand p {
-    max-width: 300px;
-    opacity: 0.85;
-    line-height: 1.5;
-}
-
-/* Links */
-.footer-links h3,
-.footer-social h3 {
-    font-size: 1.1rem;
-    margin-bottom: 12px;
-    color: #90CAF9;
 }
 
 .footer-links ul {
     list-style: none;
-    padding: 0;
 }
 
-.footer-links ul li {
-    margin: 8px 0;
-}
-
-.footer-links ul li a {
-    color: #d9e8ff;
+.footer-links a {
+    color: white;
     text-decoration: none;
-    transition: 0.3s ease;
+    transition: .3s;
 }
 
-.footer-links ul li a:hover {
-    color: #64B5F6;
-    transform: translateX(4px);
-}
-
-/* Social Icons */
-.social-icons {
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
+.footer-links a:hover {
+    opacity: 0.7;
 }
 
 .social-icons a {
-    width: 45px;
-    height: 45px;
-    background: #0d2f66;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #d9e8ff;
-    font-size: 1.3rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-size: 20px;
+    margin-right: 12px;
+    color: white;
+    transition: .3s;
 }
 
 .social-icons a:hover {
-    background: #64B5F6;
-    color: white;
-    transform: translateY(-4px) scale(1.1);
+    opacity: 0.7;
 }
 
-/* Footer bottom */
 .footer-bottom {
+    margin-top: 20px;
     text-align: center;
-    margin-top: 50px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.2);
-}
-
-.footer-bottom p {
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-    }
-    .social-icons {
-        justify-content: center;
-    }
-}
-
-
-
-/* Reset básico para toda la página */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow-x: hidden;
-}
-
-html, body {
-    width: 100%;
-    overflow-x: hidden; /* evita scroll horizontal */
-    font-family: 'Poppins', sans-serif;
-    background: #fefcf6;
-}
-
-/* Contenedor principal que centra y limita ancho */
-.container {
-    max-width: 1400px; /* ancho máximo de toda la página */
-    margin: 0 auto;    /* centra horizontalmente */
-    padding: 0 30px;   /* espacio interno a los lados */
+    opacity: 0.7;
 }
